@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+<!doctype html>
+    {% load static %}
+    <head>
+        <!-- Page Title -->
+        {% block title-block %}
+        <title>Topkar Family</title>
+        {% endblock %}
+    </head>
+<body>
+    {% block content %}
+    <br>
+    
+<!-- Banner and Heading -->
+        <img src = "{% static 'portfolio/WithDadas.png' %}" class="banner">
+        <div class="alert alert-success custom-alert">    
+              <h5 class="text-center" style="font-size: 1.9vw;">&#9432; AI Generated Image</h5>
+        </div>
+        <h1 class="container text-center hmain">TOPKAR FAMILY</h1>    
+        <br>
+
+<!-- Members Scroller -->
+        <div class="container">
+        <hr>
+
+        <!-- Members' Title -->
+        <h1 class="container text-start" id="memnblog">Members:</h1>
+        <br><br>
+        </div>
+        <div class="media-scroller-container">
+        <div class="media-scroller image-cropper">
+            
+        <!-- Members' List -->
+        {% for x in members %}
+            <div class="media-element text-center ">
+                <a href = "{% url 'member_detail' x.id %}">
+                <img src = "{{ x.profile_picture.url }}" class="d-block mx-auto" height=200>
+                <h4 id="memnblog" style="font-size: 1.75rem;">{{ x.name }}</h4>
+                </a>
+                <h6 id="hsub" style="font-size: 1.25rem;">{{ x.description|truncatechars:20 }}</h6>
+            </div>
+        {% endfor %}
+        </div>
+        </div>
+        <br><br>
+
+<!-- Blogs -->
+        <div class = "container text-center">
+            <hr>
+
+            <!-- Blogs' Title -->
+            <h1 class = "container text-start" id="memnblog">Our Blogs:</h1>
+            <h5 class="container text-start" id="hsub">{{ blog_count }} blog{{ blog_count|pluralize }} written till date.</h5>
+            
+            <!-- Blogs' List -->
+            {% for blog in first_five %}
+            <br><br>
+            <h5>
+            <div class="row">
+                <div class="col text-start" id="hsub">
+                    On {{ blog.date|date:'dS M Y' }}, by <i>{{blog.author}}</i>
+                </div>
+            </h5>            
+            <a href = "{% url 'Blogs:detail' blog.id %}">
+            <h4 class = "alert alert-success" id="memnblog" style="font-size:1.75rem">{{ blog.title }}</h4>
+            </a>
+            <h6 class="container text-start" id="hsub"><i>"{{ blog.content|striptags|truncatechars:75 }}</i></h6>
+            <br>
+            {% endfor %}
+        </div>
+{% endblock %}
+
+</body>
+</docttype>

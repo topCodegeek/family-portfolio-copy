@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+  <head>
+  <meta name="title" content="Topkar Family">
+  <meta name="description" content="Family portfolio of Topkar family.">
+  <meta name="keywords" content="topCodegeek, Topkar, Ishaan Topkar">
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="language" content="English">
+
+    {% block title-block %}{% endblock %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="{% static 'Handshake.png' %}">
+    <!-- CSS: -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'portfolio/styles.css' %}">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+
+<!-- Navbar: -->
+<nav class="navbar navbar-expand navbar-light bg-warning">
+  <!-- Nav-brand -->
+  <div class="container-fluid justify-content-between align-items-center">
+    <a class="navbar-brand" href="{% url 'homepage' %}" style="font-size: auto;">
+      <img src="{% static 'portfolio/Handshake.png' %}" alt="Logo" width="24" height="24" class="d-inline-block align-text-top">
+      <b><i>TOPKAR</i></b>
+    </a>
+  <!-- Faint Text -->
+        <!-- (Removed) -->
+    <!-- (removed 'un-official' text) -->
+
+  <!-- Droupdown -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav  ms-auto me-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="btn btn-warning dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <b style="font-family: sans-serif, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">SOCIAL</b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="https://github.com/topCodegeek" target="_blank">Github</a></li>
+            <li><a class="dropdown-item" href="https://x.com/topCodegeek" target="_blank">Twitter</a></li>
+            <li><a class="dropdown-item" href="https://forum.arduino.cc/u/ishaantopkar/" target="_blank">Arduino</a></li>
+            <li><a class="dropdown-item" href="https://www.udemy.com/user/gauri-274/" target="_blank">Udemy</a></li>
+          </ul>
+  <!-- Button -->
+        <li class="nav-item">
+          <a class="btn btn-primary" href="{% url 'Blogs:blogs' %}" style="font-family: sans-serif, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">BLOGS</a>
+        </li>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div style="min-height: 100vh;">
+
+ <!-- Insert Block -->
+{% block content %}{% endblock %}
+</div>
+
+<!-- End Credit -->
+<br><br><br><hr>
+<div class="alert alert-secondary">
+<br>
+<br>
+<br>
+  <div class="container text-center">
+    <h6 class="container text-center" style="font-size: 1.2rem">&#9432; <i>Web Author: Ishaan Topkar</h6></i>
+    <h6 style="font-size: 0.9rem">
+      View This <a href="https://github.com/topCodegeek/Django-Personal-Portfolio" target="_blank">Project</a>
+    </h6>
+  </div>
+</div>
+
+    <!-- Popper and JS: -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+  </body>
+</html>

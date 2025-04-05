@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+<!doctype html>
+<head>
+ {% block title-block %}
+ <!-- Page Title -->
+<title>{{ member.name }}</title>
+{% endblock %}
+</head>
+
+{% block content %}
+<body>
+<br>
+
+<!-- Title -->
+<div class="container text-center image-cropper">
+<br>
+<img src = "{{ member.profile_picture.url }}" height=350>
+<br>
+<br>
+<h5 class="hmain">{{ member.name }}</h5>
+<h5 id="memnblog">{{ member.description }}</h5>
+</div>
+
+<!-- Blog Title -->
+{% if blog_count > 0 %}
+<hr>
+<div class="container text-start">
+<h2 id="memnblog">Blog{{ blog_count|pluralize }} by {{ member.name }}:</h2>
+</div>
+<br><br>
+
+<!-- Blog List -->
+{% for blog in blogs %}
+
+<div class="container text-center image-cropper ">
+<br>
+<h5 class = "text-start" id="hsub">{{ blog.date|date:'dS M Y' }}</h5>            
+<a href = "{% url 'Blogs:detail' blog.id %}">
+    <h4 class = "alert alert-success" id="memnblog" style="font-size:1.75rem">{{ blog.title }}</h4>
+</a>
+<h6 class="container text-start" id="hsub"><i>"{{ blog.content|striptags|truncatechars:75 }}</i></h6>
+</div>
+<br>
+
+{% endfor %}
+{% endif %}
+</body>
+{% endblock %}
+</docttype>

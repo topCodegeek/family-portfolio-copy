@@ -1,0 +1,75 @@
+@page{
+    margin-left: (20px, auto)
+    min-width=device-width
+    }
+
+/* Fonts */
+    .hmain{
+      font-family:'Salsa';
+      font-weight: bold;
+      color:black;
+      font-size: 8vw;
+    }
+    #memnblog{
+      font-family:"Baloo 2";
+      font-weight: bold;
+      font-size: 2rem;
+    }
+    #hsub{
+      font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+
+/* Banner and Alert */
+  .banner {
+    width: 100%;
+    max-width: 1440px;
+    min-width: 320px;
+    height: auto;
+    background-size: cover;
+  }
+  .custom-alert {
+    height: 4vw;
+  }
+
+/* Scroller */
+    .media-scroller-container {
+      width: 100%;
+      overflow-x: auto;
+    }
+    .media-scroller {
+      --_spacer: var(--size-3);
+      display: grid;
+      gap: var(--_spacer);
+      grid-auto-flow: column;
+      grid-auto-columns: 25%;
+      padding: 0 var(--_spacer) var(--_spacer);
+      white-space: nowrap;
+      min-width: 1200px; /* Reset the minimum width for the grid items */
+      max-width: 1500pxt;
+      scroll-behavior: smooth;
+    }
+    .media-element {
+      display: grid;
+      grid-template-rows:min-content;
+      gap: var(--_spacer);
+      padding: var(--_spacer);
+      background: var(--surface-2);
+      border-radius: var(--radius-2);
+      box-shadow: var(--shadow-2);
+    }
+      /* Circular Crop */
+      .image-cropper img{
+        border-radius: 50%;
+        width:auto;
+      }
+
+/* Bottom Credits */
+    .credits {
+      position:fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color:burlywood;
+      color:black;
+      text-align: center;
+    }
